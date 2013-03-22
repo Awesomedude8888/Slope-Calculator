@@ -14,6 +14,15 @@ double n, d;
 n = y1-y2;
 d = x1-x2;
 if (d == 0){
+  if (n == 0){
+    System.out.println("Y U ENTER A POINT???");
+    try{
+   System.in.read();}
+  catch(java.lang.Exception ex){
+  System.exit(0);}
+  System.out.println("Well, you just failed to enter 2 different co-ordinates.");
+  System.exit(0);
+  }
 Slope = 1;
 } else {
 Slope = n / d;
@@ -24,11 +33,18 @@ System.out.println("Y U NO ENTER THE 2 COORDINATES AND 4 ARGS?????");
   try{
    System.in.read();}
   catch(java.lang.Exception ex){
-   System.out.println("");
+   System.exit(0);
   }
-System.out.println("Well, screw you.  You should've typed:  java slope x1 y1 x2 y2");
+System.out.println("You should've typed:  java slope x1 y1 x2 y2");
 } catch (ArithmeticException | NumberFormatException e){
 System.out.println("Y U NO DO MATH RIGHT???");
+try{
+   System.in.read();}
+  catch(java.lang.Exception ex){
+   System.exit(0);
+  }
+System.out.println("\'Cus you can\'t do math, that's why.");
+System.exit(0);
 }
 return Slope;
 }
